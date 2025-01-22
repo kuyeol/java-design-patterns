@@ -32,7 +32,7 @@ public interface RequestHandler {
   boolean canHandleRequest(Request req);
 
   int getPriority();
-
+  int setPriority(Request priority);
   void handle(Request req);
 
   String name();

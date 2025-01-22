@@ -54,20 +54,12 @@ public class App {
   public static void main(String[] args) {
 
     var king = new OrcKing();
+    king.makeRequest(new Request(RequestType.TORTURE_PRISONER, "torture prisoner : 2",2));
+    king.makeRequest(new Request(RequestType.COLLECT_TAX, "collect tax  : 3 ",3));
+  king.makeRequest(new Request(RequestType.DEFEND_CASTLE, "collect tax : 4 ",4));
+  king.makeRequest(new Request(RequestType.COLLECT_TAX, "defend castle : 1",1));
 
-    king.makeRequest(new Request(RequestType.DEFEND_CASTLE, "defend castle"));
-    king.makeRequest(new Request(RequestType.TORTURE_PRISONER, "torture prisoner"));
-
-
-
-    king.makeRequest(new Request(RequestType.COLLECT_TAX, "collect tax"));
-
-
-
+  
   }
-
-
-
-
 
 }

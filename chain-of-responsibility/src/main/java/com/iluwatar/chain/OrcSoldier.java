@@ -31,6 +31,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class OrcSoldier implements RequestHandler {
+
   @Override
   public boolean canHandleRequest(Request req) {
     return req.getRequestType() == RequestType.COLLECT_TAX;
@@ -38,12 +39,19 @@ public class OrcSoldier implements RequestHandler {
 
   @Override
   public int getPriority() {
-    return 1;
+    return 0;
+  }
+
+
+  @Override
+  public int setPriority(Request p){
+
+    return p.getPriority();
   }
 
   @Override
   public void handle(Request req) {
-    req.markHandled();
+   req.markHandled();
     LOGGER.info("{} handling request \"{}\"", name(), req);
   }
 

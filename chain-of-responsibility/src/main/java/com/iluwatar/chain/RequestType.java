@@ -30,7 +30,6 @@ package com.iluwatar.chain;
 public enum RequestType {
 
   DEFEND_CASTLE,
-  HEllo,
   TORTURE_PRISONER,
   COLLECT_TAX
 

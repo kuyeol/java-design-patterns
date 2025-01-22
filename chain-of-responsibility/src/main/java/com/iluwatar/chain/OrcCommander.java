@@ -31,15 +31,33 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class OrcCommander implements RequestHandler {
+
+
+int priority;
+
   @Override
   public boolean canHandleRequest(Request req) {
+    
     return req.getRequestType() == RequestType.DEFEND_CASTLE;
   }
 
   @Override
   public int getPriority() {
-    return 2;
+
+        return 1;
+  
   }
+
+  @Override
+  public int setPriority(Request p){
+    this.priority=p.getPriority();
+    this.priority=100;
+    return priority;
+  }
+
+
+
+
 
   @Override
   public void handle(Request req) {
@@ -49,6 +67,6 @@ public class OrcCommander implements RequestHandler {
 
   @Override
   public String name() {
-    return "Orc commander";
+    return "Orc commander   "+priority+" / ";
   }
 }

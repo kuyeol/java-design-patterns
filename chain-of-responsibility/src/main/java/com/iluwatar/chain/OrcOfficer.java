@@ -38,7 +38,13 @@ public class OrcOfficer implements RequestHandler {
 
   @Override
   public int getPriority() {
-    return 3;
+    return 0;
+  }
+
+  @Override
+  public int setPriority(Request p){
+
+    return p.getPriority();
   }
 
   @Override
